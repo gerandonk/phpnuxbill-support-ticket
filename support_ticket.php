@@ -82,6 +82,8 @@ function support_ticket_wa_notify_staff($staffId, $message)
 function support_ticket_dashboard_hook($args = [])
 {
     global $ui;
+    $check = ORM::for_table('support_tickets')->raw_query("SHOW TABLES LIKE 'support_tickets'")->find_one();
+    if (!$check) return;
     $admin = Admin::_info();
     $userId = $admin['id'];
     $total = ORM::for_table('support_tickets')->where('assigned_to', $userId)->count();
