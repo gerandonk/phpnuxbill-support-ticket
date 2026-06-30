@@ -13,7 +13,7 @@
  *
  **/
 
-register_menu("Support Ticket", true, "support_ticket", 'AFTER_RADIUS', 'glyphicon glyphicon-headphones', '', '', ['SuperAdmin', 'Admin']);
+register_menu("Support Ticket", true, "support_ticket", 'AFTER_RADIUS', 'glyphicon glyphicon-headphones', 'Free Version', 'yellow', ['SuperAdmin', 'Admin']);
 register_menu("Support Ticket", false, "support_ticket_customer", 'AFTER_DASHBOARD', 'glyphicon glyphicon-headphones');
 register_hook('view_dashboard', 'support_ticket_dashboard_hook');
 
